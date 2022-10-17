@@ -1,0 +1,33 @@
+footer img{
+  width: 100%;
+  border-radius: 8px;
+}
+
+.created-with{
+
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 4px;
+  text-decoration-color: gray;
+}
+
+.footer-list{
+  display: grid;
+  gap: 1.5rem;
+
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  @media (min-width: 32em) {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.copyright{
+  text-align: center;
+  padding-bottom: 1rem;
+}

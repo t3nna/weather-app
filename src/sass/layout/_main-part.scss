@@ -1,0 +1,76 @@
+main {
+  padding-top: 8rem;
+}
+
+.weather {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  background-color: lightgray;
+
+  @media (min-width: 32rem) {
+    grid-auto-flow: column;
+  }
+}
+
+.weather__properties {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 1rem;
+  grid-template-areas:
+          "temprature weather-icon"
+"weather-desc weather-desc";
+
+  .weather__icon {
+    justify-self: center;
+    align-self: center;
+  }
+
+  //@media (min-width: 25em) {
+  //  grid-template-columns: 1fr 70px 2fr;
+  //  grid-template-areas:
+  //"temprature weather-icon weather-desc";
+  //}
+
+  @media (min-width: 32rem) {
+    grid-template-columns: 100px 1fr;
+    grid-template-areas:
+  "weather-icon temprature"
+  "weather-desc weather-desc";
+    .weather__temperature {
+      text-align: right;
+    }
+    .weather__description {
+      text-align: left;
+    }
+  }
+}
+
+.weather__temperature {
+  grid-area: temprature;
+}
+
+.weather__icon {
+  align-self: center;
+  justify-self: center;
+  grid-area: weather-icon;
+
+  svg {
+    font-size: 3.5rem;
+  }
+}
+
+.weather__description {
+  grid-area: weather-desc;
+}
+
+
+.weather__location {
+  text-align: right;
+
+  h2 {
+
+    margin-bottom: 1rem;
+  }
+}

@@ -1,0 +1,25 @@
+@use '../base/typo';
+
+.btn {
+  font-family: typo.$ff-heading;
+  padding: 0.375em 1.875em;
+  background-color: #319795;
+  border-radius: 6px;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover, &:focus{
+    background-color: #642321;
+  }
+
+
+}
+
+.btn__active{
+  background-color: #9d3330;
+}

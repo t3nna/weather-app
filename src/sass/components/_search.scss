@@ -1,0 +1,19 @@
+.search-bar{
+  display: flex;
+
+  input{
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 8px 0 0 8px;
+    border: none;
+
+    &:focus{
+      outline: none;
+    }
+  }
+  button{
+    border: none;
+    border-radius: 0 8px 8px 0;
+
+  }
+}

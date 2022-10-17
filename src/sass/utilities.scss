@@ -1,0 +1,125 @@
+@use 'abstracts/variables';
+@use 'base/typo';
+
+.container{
+
+  width: min(variables.$global-max-width, 100% - (variables.$global-padding * 2));
+  margin-inline: auto;
+}
+
+.flow > * + *{
+  margin-top: var(--flow-spacer, 3rem)
+}
+
+.text-primary-400 {
+  color: var(--clr-primary-400);
+}
+
+.text-accent-400 {
+  color: var(--clr-accent-400);
+}
+
+.text-accent-100 {
+  color: var(--clr-accent-100);
+}
+
+.text-neutral-100 {
+  color: var(--clr-neutral-100);
+}
+
+.text-neutral-900 {
+  color: var(--clr-neutral-900);
+}
+
+.bg-primary-400 {
+  background-color: var(--clr-primary-400);
+}
+
+.bg-accent-400 {
+  background-color: var(--clr-accent-400);
+}
+
+.bg-accent-100 {
+  background-color: var(--clr-accent-100);
+}
+
+.bg-neutral-100 {
+  background-color: var(--clr-neutral-100);
+}
+
+.bg-neutral-900 {
+  background-color: var(--clr-neutral-900);
+}
+
+.fw-bold {
+  font-weight: typo.$fw-bold;
+}
+.fw-medium{
+  font-weight: typo.$fw-medium;
+}
+
+.fw-light {
+  font-weight: typo.$fw-light;
+}
+
+.fw-regular {
+  font-weight: typo.$fw-regular;
+}
+
+.fs-primary-heading {
+  font-family: typo.$ff-heading;
+  font-size: typo.$fs-primary-heading;
+  line-height: 1.1;
+}
+
+.fs-secondary-heading {
+  font-family: typo.$ff-heading;
+  font-size: typo.$fs-secondary-heading;
+  line-height: 1.1;
+}
+
+.fs-third-heading {
+  font-family: typo.$ff-heading;
+  font-weight: typo.$fw-bold;
+  font-size: typo.$fs-third-heading;
+  line-height: 1.75rem;
+}
+
+.fs-third-heading__neutral{
+  font-family: typo.$ff-primary;
+  font-weight: typo.$fw-medium;
+  font-size: typo.$fs-third-heading;
+  line-height: 1.75rem;
+}
+
+.fs-300{
+  font-size: typo.$fs-300;
+}
+
+.fs-400 {
+  font-size: typo.$fs-400;
+}
+
+.fs-500 {
+  font-size: typo.$fs-500;
+}
+
+.fs-600 {
+  font-size: typo.$fs-600;
+}
+
+.fs-700 {
+  font-size: typo.$fs-700;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
