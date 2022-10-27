@@ -31,15 +31,15 @@ const marsWeatherSlice = createSlice({
     },
     extraReducers(builder) {
         builder
-            .addCase(fetchPosts.pending, (state, action) => {
+            .addCase(fetchWeatherMars.pending, (state, action) => {
                 state.status = 'loading'
             })
-            .addCase(fetchPosts.fulfilled, (state, action) => {
+            .addCase(fetchWeatherMars.fulfilled, (state, action) => {
                 state.status = 'succeeded'
                 // Add any fetched posts to the array
                 state.data = action.payload
             })
-            .addCase(fetchPosts.rejected, (state, action) => {
+            .addCase(fetchWeatherMars.rejected, (state, action) => {
                 state.status = 'failed'
                 state.error = action.error.message
             })
@@ -47,7 +47,6 @@ const marsWeatherSlice = createSlice({
 
 })
 
-export const {addLocation} = marsWeatherSlice.actions
 
 export default marsWeatherSlice.reducer
 
@@ -55,7 +54,7 @@ function timeout(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-export const fetchPosts = createAsyncThunk('weather/fetchWeather', async () => {
+export const fetchWeatherMars = createAsyncThunk('weather/fetchWeatherMars', async () => {
 
     const response = await fetch(API_URL)
 
