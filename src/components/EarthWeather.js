@@ -8,6 +8,7 @@ import {
 } from "../features/earthWeatherSlice";
 import CurrentDay from "./CurrentDay";
 import Search from "./Search";
+import EarthWeatherSection from "./currentDayWeather/EarthWeatherSection";
 
 function EarthWeather(props) {
     const earthStatus = useSelector(state => state.earth.status)
@@ -53,7 +54,7 @@ function EarthWeather(props) {
                 <Search location={location} handleClick={handleClick} handleSubmit={handleSubmit}/>
                 <section>
                     <div className="container">
-                        <CurrentDay/>
+                        <EarthWeatherSection/>
                     </div>
                 </section>
                 <section className="weather-chart">

@@ -5,7 +5,7 @@ import {addLocation, fetchWeatherMars} from "./features/marsWeatherSlice";
 import {nanoid} from "@reduxjs/toolkit";
 import CurrentDay from "./components/CurrentDay";
 import {fetchWeatherEarth} from "./features/earthWeatherSlice";
-import {Route, Routes} from "react-router-dom";
+import {Route, Routes, useLocation} from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
@@ -15,6 +15,7 @@ import Search from "./components/Search";
 
 
 function App() {
+
 
 
 

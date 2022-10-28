@@ -3,14 +3,17 @@ import {useSelector} from "react-redux";
 import {Spinner} from "./Spinner";
 import {selectSol} from "../tools/selectSol";
 import CurrentDayWeather from "./CurrentDayWeather";
+import useLocationPathname from "../hooks/useLocationPathname";
 
 export default function CurrentDay() {
+
+    const pathname = useLocationPathname()
+    console.log(pathname)
 
     const postStatus = useSelector(state => state.mars.status)
     const error = useSelector(state => state.mars.error)
 
     // Select sol
-    let sols = useSelector((state) => state.mars.data)
 
 
     let content
@@ -18,10 +21,10 @@ export default function CurrentDay() {
     if (postStatus === 'loading') {
         content = <Spinner text="Loading..."/>
     } else if (postStatus === 'succeeded') {
-        let weather = selectSol(sols)
-        weather= weather[weather.length-1]
-        console.log(weather)
-        content=CurrentDayWeather({weather})
+        // let weather = selectSol(sols)
+        // weather= weather[weather.length-1]
+        // console.log(weather)
+        // content=CurrentDayWeather({weather})
 
     } else if (postStatus === 'failed') {
         content = <div>{error}</div>
