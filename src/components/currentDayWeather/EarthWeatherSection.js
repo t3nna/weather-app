@@ -1,31 +1,53 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import withLocation from "../../hoc/withLocation";
+import degreesToDirection from "../../tools/degreesToDirections";
 
 function EarthWeather(props) {
     const weather = useSelector(state => state.earth.currentWeather)
+    console.log(weather)
     return (
-        <>
+        <div className={'earth-weather'}>
             <div className="weather__properties">
-                <div className="weather__temperature">
-                    <h1 className="fs-primary-heading">{weather.main.temp}</h1>
-                </div>
-                <div className="weather__icon">
-                    <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 16 16" height="1em"
-                         width="1em" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M4.158 12.025a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 0 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-.5 1.5a.5.5 0 0 1-.948-.316l.5-1.5a.5.5 0 0 1 .632-.317zm3 0a.5.5 0 0 1 .316.633l-1 3a.5.5 0 1 1-.948-.316l1-3a.5.5 0 0 1 .632-.317zm.247-6.998a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 11H13a3 3 0 0 0 .405-5.973zM8.5 2a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1 0 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4.002 4.002 0 0 1 8.5 2z"></path>
-                    </svg>
 
+                <div className="weather__temperature flow" style={{"--flow-spacer": 0.75 + "rem"}}>
+                    <h2 className="fs-secondary-heading">{weather.name}, {weather.sys.country}</h2>
+                    <h1 className="fs-primary-heading">{Math.round(weather.main.temp)}°</h1>
+
+                    <p>H:{Math.round(weather.main.temp_max)}° L:{Math.round(weather.main.temp_min)}°</p>
                 </div>
+
+                <div className="weather__status flow" style={{"--flow-spacer": 0.5 + "rem"}}>
+                    <div className="weather__icon">
+
+                        <img src={`http://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} alt=""/>
+                    </div>
+                    <h2 className={'fs-500'}>{weather.weather[0].main}</h2>
+                </div>
+
 
                 <div className="flow | weather__description" style={{"--flow-spacer": .25 + "rem"}}>
-                    <p>Lorem ipsum dolor sit.dasdfasdf sadfsad hgfhgsfd </p>
-                    <p>Lorem ipsum dolor sit.</p>
-                    <p>Lorem ipsum dolor sit.</p>
+                    <div className="divider">
+                        <hr/>
+                    </div>
+                    <h3 className={'fs-500 fw-medium'}>Current Details</h3>
+                    <p>Pressure: {weather.main.pressure} hpa</p>
+                    <p>Humidity: {weather.main.humidity}%</p>
+                    <p>Feels Like: {Math.round(weather.main.feels_like)}°</p>
+                    <p>Visibility: {weather.visibility} m</p>
+                    <div className="divider">
+                        <hr/>
+                    </div>
+                    <h3 className={'fs-500 fw-medium'}>Wind</h3>
+                    <p>Wind direction: {degreesToDirection(weather.wind.deg)}</p>
+                    <p>Wind speed: {weather.wind.speed} m/s</p>
+
                 </div>
             </div>
-        </>
+            <div className="weather__location flow" style={{"--flow-spacer": .25 + "rem"}}>
+                <p>openweathermap.org</p>
+            </div>
+        </div>
     );
 }
 

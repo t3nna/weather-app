@@ -5,3 +5,13 @@ body{
   font-family: typo.$ff-primary;
   background-color: floralwhite;
 }
+
+hr {
+  height: 0;
+  color: orange;
+  border-width: 0;
+  border-top-width: 2px;
+  border-color: rgb(255, 255, 255);
+
+
+}

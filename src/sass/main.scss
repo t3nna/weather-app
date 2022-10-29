@@ -12,7 +12,9 @@
 @import "layout/navigation";
 @import "layout/main-part";
 @import "layout/footer";
-@import "layout/item";
+@import "layout/item",
+"layout/current-weather-cart"
+;
 
 @import "pages/home";
 

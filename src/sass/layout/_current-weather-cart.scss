@@ -1,0 +1,80 @@
+
+.weather {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  background-color: lightgray;
+
+  @media (min-width: 32rem) {
+    grid-auto-flow: column;
+  }
+}
+
+.earth-weather .weather__properties {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 1rem;
+  grid-template-areas:
+          "temprature weather-icon"
+"weather-desc weather-desc";
+
+  .weather__icon {
+    justify-self: center;
+    align-self: center;
+  }
+
+  //@media (min-width: 25em) {
+  //  grid-template-columns: 1fr 70px 2fr;
+  //  grid-template-areas:
+  //"temprature weather-icon weather-desc";
+  //}
+
+  @media (min-width: 32rem) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+  "temprature status"
+  "weather-desc weather-desc";
+    .weather__temperature {
+      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .weather__status{
+      justify-self: center;
+      align-self: center;
+      text-align: center;
+    }
+    .weather__description {
+      text-align: left;
+    }
+
+  }
+}
+
+.weather__temperature {
+  grid-area: temprature;
+}
+
+.weather__status{
+  grid-area: status;
+}
+
+.weather__icon {
+  margin: -1.5rem;
+}
+
+.weather__description {
+  grid-area: weather-desc;
+}
+
+
+.weather__location {
+  text-align: right;
+
+  h2 {
+
+    margin-bottom: 1rem;
+  }
+}
