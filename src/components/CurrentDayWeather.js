@@ -1,5 +1,5 @@
 import React from 'react';
-import degreesToDirection from "../tools/degreesToDirections";
+import degreesToDirection from "../utils/degreesToDirections";
 
 function CurrentDayWeather({weather}) {
 

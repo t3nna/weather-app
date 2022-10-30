@@ -1,8 +1,8 @@
 //redux slice for earth weather
 
-import {createSlice, nanoid} from "@reduxjs/toolkit";
-import {createAsyncThunk} from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import currentWeatherUrl from "./apiEarth";
+import {formattedDate} from "../utils/formattedDate";
 
 
 const earthWeatherSlice = createSlice({
@@ -44,7 +44,8 @@ const earthWeatherSlice = createSlice({
             })
             .addCase(fetchForecastWeatherEarth.fulfilled, (state, action)=>{
                 state.status = 'succeeded'
-                state.forecastWeather = action.payload
+
+                    state.forecastWeather = formattedDate(action.payload.list)
             }
             )
             .addCase(fetchForecastWeatherEarth.rejected, (state, action)=>{
@@ -84,8 +85,9 @@ export const fetchForecastWeatherEarth = createAsyncThunk('weather/fetchForecast
 
     const response = await fetch(API_URL_FORECAST_WEATHER)
 
-    const data = await response.json()
+    let data = await response.json()
     console.log(data)
+
     return data
 
 })

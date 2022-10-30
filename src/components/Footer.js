@@ -10,15 +10,20 @@ function Footer(props) {
                             Created with
                         </h2>
                         <ul role="list" className="footer-list">
-                            <li><a href="#">
+                            <li><a href="https://reactjs.org/">
                                 <img src="/images/Background.png" alt=""/>
                                 <h3 className="fs-third-heading__neutral">React</h3>
                                 <p>Library for interfaces in JS</p>
                             </a></li>
-                            <li><a href="#">
+                            <li><a href="https://sass-lang.com/">
                                 <img src="/images/Background.png" alt=""/>
                                 <h3 className="fs-third-heading__neutral">Sass</h3>
                                 <p>Framework for Css</p>
+                            </a></li>
+                        <li><a href="https://redux.js.org//">
+                                <img src="/images/Background.png" alt=""/>
+                                <h3 className="fs-third-heading__neutral">Redux</h3>
+                                <p>A Predictable State Container </p>
                             </a></li>
                         </ul>
                         <div className="copyright fw-medium fs-500">

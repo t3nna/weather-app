@@ -1,7 +1,7 @@
 import React from "react";
 import {useSelector} from "react-redux";
 import {Spinner} from "./Spinner";
-import {selectSol} from "../tools/selectSol";
+import {selectSol} from "../utils/selectSol";
 import CurrentDayWeather from "./CurrentDayWeather";
 import useLocationPathname from "../hooks/useLocationPathname";
 

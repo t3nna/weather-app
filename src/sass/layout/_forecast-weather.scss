@@ -1,0 +1,28 @@
+.weather__forecast-list{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+
+
+  li{
+    justify-self: stretch;
+    background-color: mediumpurple;
+    border-radius: .75rem;
+
+
+
+    display: grid;
+    justify-items: center;
+    text-align: center;
+    color: white;
+    img{
+      margin: -1rem 0;
+    }
+  }
+
+  @media (min-width: 40em){
+    &{
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+}

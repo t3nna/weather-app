@@ -9,6 +9,7 @@ import {
 import CurrentDay from "./CurrentDay";
 import Search from "./Search";
 import EarthWeatherSection from "./currentDayWeather/EarthWeatherSection";
+import EarthWeatherForecast from "./currentDayWeather/EarthWeatherForecast";
 
 function EarthWeather(props) {
     const earthStatus = useSelector(state => state.earth.status)
@@ -65,7 +66,7 @@ function EarthWeather(props) {
 
                 <section className="daily-forecast">
                     <div className="container">
-
+                        <EarthWeatherForecast/>
                     </div>
                 </section>
             </main>

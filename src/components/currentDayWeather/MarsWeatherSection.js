@@ -1,7 +1,7 @@
 import React from 'react';
-import degreesToDirection from "../../tools/degreesToDirections";
+import degreesToDirection from "../../utils/degreesToDirections";
 import {useSelector} from "react-redux";
-import {selectSol} from "../../tools/selectSol";
+import {selectSol} from "../../utils/selectSol";
 import withLocation from "../../hoc/withLocation";
 
 function MarsWeather(props) {

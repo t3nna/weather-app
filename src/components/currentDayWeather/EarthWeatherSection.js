@@ -1,7 +1,8 @@
 import React from 'react';
 import {useSelector} from "react-redux";
 import withLocation from "../../hoc/withLocation";
-import degreesToDirection from "../../tools/degreesToDirections";
+import degreesToDirection from "../../utils/degreesToDirections";
+import EarthWeatherForecast from "./EarthWeatherForecast";
 
 function EarthWeather(props) {
     const weather = useSelector(state => state.earth.currentWeather)
@@ -47,6 +48,7 @@ function EarthWeather(props) {
             <div className="weather__location flow" style={{"--flow-spacer": .25 + "rem"}}>
                 <p>openweathermap.org</p>
             </div>
+
         </div>
     );
 }
