@@ -27,7 +27,7 @@ function Search({location, handleClick, handleSubmit}) {
         <>
             <section className="search">
                 <div className="container flow">
-                    <h1 className="fs-primary-heading">Weather App</h1>
+
                     <form className="search-bar" onSubmit={handleSubmit}>
                         <input type="text" value={location} onChange={handleClick}/>
                         <button type="submit" className="btn">

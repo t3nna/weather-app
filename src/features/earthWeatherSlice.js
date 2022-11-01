@@ -3,6 +3,7 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import currentWeatherUrl from "./apiEarth";
 import {formattedDate} from "../utils/formattedDate";
+import {forecastWeatherUrl} from "./apiEarth";
 
 
 const earthWeatherSlice = createSlice({
@@ -70,20 +71,22 @@ let API_URL_FORECAST_WEATHER = 'https://api.openweathermap.org/data/2.5/forecast
 export const fetchCurrentWeatherEarth = createAsyncThunk('weather/fetchCurrentWeatherEarth', async (_, thunkAPI) => {
     let searchResult = thunkAPI.getState(state => state)
     searchResult = searchResult.earth.location
-    console.log(searchResult)
 
     const url  = searchResult ? currentWeatherUrl(searchResult) : currentWeatherUrl()
 
     const response = await fetch(url)
 
     const data = await response.json()
-    console.log(data)
     return data
 
 })
-export const fetchForecastWeatherEarth = createAsyncThunk('weather/fetchForecastWeatherEarth', async () => {
+export const fetchForecastWeatherEarth = createAsyncThunk('weather/fetchForecastWeatherEarth', async (_, thunkAPI) => {
+    let searchResult = thunkAPI.getState(state => state)
+    searchResult = searchResult.earth.location
 
-    const response = await fetch(API_URL_FORECAST_WEATHER)
+    const url  = searchResult ? forecastWeatherUrl(searchResult) : forecastWeatherUrl()
+
+    const response = await fetch(url)
 
     let data = await response.json()
     console.log(data)

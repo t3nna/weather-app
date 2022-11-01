@@ -11,7 +11,7 @@
   }
 }
 
-.earth-weather .weather__properties {
+ .weather__properties {
   display: grid;
   grid-template-columns: 1fr 100px;
   gap: 1rem;
@@ -22,6 +22,12 @@
   .weather__icon {
     justify-self: center;
     align-self: center;
+
+    img{
+      width: 40px;
+      margin-inline: auto;
+      padding-bottom: 1rem;
+    }
   }
 
   //@media (min-width: 25em) {

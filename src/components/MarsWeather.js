@@ -3,6 +3,8 @@ import {useDispatch, useSelector} from "react-redux";
 import {fetchWeatherMars} from "../features/marsWeatherSlice";
 import CurrentDay from "./CurrentDay";
 import MarsWeatherSection from "./currentDayWeather/MarsWeatherSection";
+import EarthWeatherForecast from "./currentDayWeather/EarthWeatherForecast";
+import MarsWeatherForecast from "./currentDayWeather/MarsWeatherForecast";
 
 function MarsWeather(props) {
     const marsStatus = useSelector(state => state.mars.status)
@@ -24,6 +26,13 @@ function MarsWeather(props) {
         <main className={'flow'}>
             <section>
                 <div className="container">
+                    <h1 className="fs-primary-heading">Weather App</h1>
+
+                </div>
+            </section>
+            <section>
+                <div className="container">
+
                     <MarsWeatherSection/>
                 </div>
             </section>
@@ -35,7 +44,7 @@ function MarsWeather(props) {
 
             <section className="daily-forecast">
                 <div className="container">
-
+                    <MarsWeatherForecast/>
                 </div>
             </section>
         </main>

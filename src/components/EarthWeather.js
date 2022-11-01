@@ -52,6 +52,13 @@ function EarthWeather(props) {
     return (
         <>
             <main className={'flow'}>
+                <section>
+                    <div className="container">
+                <h1 className="fs-primary-heading">Weather App</h1>
+
+                    </div>
+                </section>
+
                 <Search location={location} handleClick={handleClick} handleSubmit={handleSubmit}/>
                 <section>
                     <div className="container">

@@ -17,8 +17,6 @@ import Search from "./components/Search";
 function App() {
 
 
-
-
     return (
         <>
             <Routes>
@@ -30,29 +28,25 @@ function App() {
                     </>}/>
 
                     <Route path={'/weather'}>
-                        <Route path={'earth'} element={<main className={'flow'}>
+                        <Route path={'earth'} element={<>
+
                             <EarthWeather/>
                             <Footer/>
+                        </>
+                        }/>
 
-                        </main>}/>
-
-                        <Route path={'mars'} element={<main className={'flow'}>
+                        <Route path={'mars'} element={<>
 
                             <MarsWeather/>
                             <Footer/>
 
-                        </main>}/>
+                        </>}/>
                     </Route>
 
                 </Route>
 
 
             </Routes>
-
-
-
-
-
 
 
         </>

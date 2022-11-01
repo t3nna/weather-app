@@ -6,7 +6,6 @@ import EarthWeatherForecast from "./EarthWeatherForecast";
 
 function EarthWeather(props) {
     const weather = useSelector(state => state.earth.currentWeather)
-    console.log(weather)
     return (
         <div className={'earth-weather'}>
             <div className="weather__properties">
