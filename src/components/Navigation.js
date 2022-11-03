@@ -11,8 +11,8 @@ function Navigation(props) {
                         <div className="navigation-top">
                             <p className="logo | fs-600 fw-medium">Weather</p>
                             <div className={'weather-navigation'}>
-                                <Link to={'weather/earth'} className="btn |fw-medium fs-500">Earth</Link>
-                                <Link to="weather/mars" className="btn btn__active |fw-medium fs-500">Mars</Link>
+                                <Link to={'weather/earth'} className="earth-btn | btn fw-medium fs-500">Earth</Link>
+                                <Link to="weather/mars" className="mars-btn | btn btn__active fw-medium fs-500">Mars</Link>
                             </div>
                             <div className="fs-500 | source-about">
                                 <p>About</p>

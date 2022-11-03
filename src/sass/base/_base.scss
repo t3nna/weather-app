@@ -3,7 +3,8 @@
 
 body{
   font-family: typo.$ff-primary;
-  background-color: floralwhite;
+  background-color: variables.$clr-bg;
+  color: variables.$clr-font;
 }
 
 hr {

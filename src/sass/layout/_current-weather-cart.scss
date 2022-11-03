@@ -1,10 +1,13 @@
+@use "../base/typo";
+@use "../abstracts/variables";
+
 
 .weather {
   display: grid;
   gap: 1rem;
   padding: 1.5rem 1rem;
   border-radius: 8px;
-  background-color: lightgray;
+  background-color: variables.$clr-accent-200;
 
   @media (min-width: 32rem) {
     grid-auto-flow: column;

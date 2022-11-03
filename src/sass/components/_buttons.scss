@@ -3,17 +3,15 @@
 .btn {
   font-family: typo.$ff-heading;
   padding: 0.375em 1.875em;
-  background-color: #319795;
   border-radius: 6px;
-  color: white;
   transition: background-color 0.2s ease-in-out;
   text-decoration: none;
   font-weight: typo.$fw-medium;
 
 
-  &:hover, &:focus-visible{
-    background-color: #642321;
-  }
+  //&:hover, &:focus-visible{
+  //  background-color: #642321;
+  //}
 
 
 }

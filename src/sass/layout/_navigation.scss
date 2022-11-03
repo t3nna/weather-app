@@ -7,7 +7,7 @@
   top: 0;
   right: 0;
   left: 0;
-  background-color: rgba(67, 131, 133, 0.63);
+  background-color: variables.$clr-bg-navigation;
   //background-color: coral;
   backdrop-filter: blur(10px) saturate(160%) contrast(100%);
   -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(100%);
@@ -62,4 +62,25 @@
 
 .logo{
   font-family: typo.$ff-heading;
+}
+
+.earth-btn{
+  background-color: variables.$clr-complimentary-400;
+
+  &:hover, &:focus-visible{
+    background-color: variables.$clr-complimentary-500;
+  }
+}
+
+.mars-btn{
+  background-color: variables.$clr-accent-400;
+
+  &:hover, &:focus-visible{
+    background-color: variables.$clr-accent-500;
+  }
+
+}
+
+.earth-btn, .mars-btn{
+  color: variables.$clr-bg;
 }
