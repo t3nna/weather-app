@@ -1,3 +1,7 @@
+@use "../base/typo";
+@use "../abstracts/variables";
+
+
 .weather__forecast-list{
   display: grid;
   gap: 1rem;
@@ -6,15 +10,17 @@
 
   li{
     justify-self: stretch;
-    background-color: mediumpurple;
+    background-color: variables.$clr-accent-200;
     border-radius: .75rem;
+    padding: 0.5rem;
 
 
 
     display: grid;
+    gap: 1rem;
     justify-items: center;
     text-align: center;
-    color: white;
+    color: variables.$clr-font;
     img{
       margin: -1rem 0;
     }
@@ -22,7 +28,7 @@
 
   @media (min-width: 40em){
     &{
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
     }
   }
 }

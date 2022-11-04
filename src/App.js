@@ -23,7 +23,7 @@ function App() {
                 <Route element={<Navigation/>}>
 
                     <Route index element={<>
-                        {/*<Main/>*/}
+                        <Main/>
 
                     </>}/>
 

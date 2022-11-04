@@ -14,17 +14,20 @@ function MarsWeatherForecast(props) {
                     weather &&
                     Object.entries(weather)
                         .map(([sol, data], index) => {
-                            console.log( data)
-                            return(
-                                <li key={index} className={'weather__forecast-day weather__forecast-active'}>
-                                    <p className={'fs-500 fw-medium'}>Sol {sol}</p>
-                                    <p>{new Date(data.First_UTC).getDate()} {new Date(data.First_UTC).toLocaleString('default', {month: 'short'})}</p>
-                                    <p>High: {data.AT.mx}</p>
-                                    <p>Low: {data.AT.mn}</p>
-                                    {/*<p>H:{item.highTemp}° L:{item.lowTemp}°</p>*/}
-                                    {/*<p>{item.status}</p>*/}
-                                </li>
-                            )
+                                console.log(data)
+                                return (
+                                    <li key={index} className={'weather__forecast-day weather__forecast-active'}>
+                                        <p className={'fs-500 fw-medium'}>Sol {sol}</p>
+                                        <p>{new Date(data.First_UTC).getDate()} {new Date(data.First_UTC).toLocaleString('default', {month: 'short'})}</p>
+                                        <div>
+
+                                            <p>High: {data.AT.mx}</p>
+                                            <p>Low: {data.AT.mn}</p>
+                                        </div>
+                                        {/*<p>H:{item.highTemp}° L:{item.lowTemp}°</p>*/}
+                                        {/*<p>{item.status}</p>*/}
+                                    </li>
+                                )
                             }
                         )
                 }

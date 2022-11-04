@@ -4,7 +4,8 @@
   font-family: typo.$ff-heading;
   padding: 0.375em 1.875em;
   border-radius: 6px;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out ,   color 0.2s ease-in-out  ;
+;
   text-decoration: none;
   font-weight: typo.$fw-medium;
 

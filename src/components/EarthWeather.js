@@ -65,11 +65,6 @@ function EarthWeather(props) {
                         <EarthWeatherSection/>
                     </div>
                 </section>
-                <section className="weather-chart">
-                    <div className="container">
-                        *chart here
-                    </div>
-                </section>
 
                 <section className="daily-forecast">
                     <div className="container">

@@ -9,7 +9,7 @@ function Navigation(props) {
                     <div className="nav-wrapper">
 
                         <div className="navigation-top">
-                            <p className="logo | fs-600 fw-medium">Weather</p>
+                            <Link to={'/'} className="logo | fs-600 fw-medium">Weather</Link>
                             <div className={'weather-navigation'}>
                                 <Link to={'weather/earth'} className="earth-btn | btn fw-medium fs-500">Earth</Link>
                                 <Link to="weather/mars" className="mars-btn | btn btn__active fw-medium fs-500">Mars</Link>

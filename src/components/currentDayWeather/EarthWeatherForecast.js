@@ -18,7 +18,7 @@ function EarthWeatherForecast(props) {
                         <li key={index} className={'weather__forecast-day weather__forecast-active'}>
                             <p>{new Date(item.day).getDate()} {new Date(item.day).toLocaleString('default', {month: 'short'})}</p>
                             <img src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`} alt=""/>
-                            <p>H:{item.highTemp}° L:{item.lowTemp}°</p>
+                            <p>H:{Math.round(item.highTemp)}° L:{Math.round(item.lowTemp)}°</p>
                             <p>{item.status}</p>
                         </li>
                     ))

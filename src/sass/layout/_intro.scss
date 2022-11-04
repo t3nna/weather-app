@@ -1,0 +1,118 @@
+@use "../base/typo";
+@use "../abstracts/variables";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+
+
+.intro{
+  $bg-color: variables.$clr-bg;
+  $typewriterSpeed: 2.5s;
+
+  font-family: 'IBM Plex Mono', monospace;
+
+  .container{
+    display: grid;
+    place-content: center;
+
+  }
+  h1{
+    font-size: clamp(0.875rem, 3vw + 0.5rem, 2.5rem);
+    position: relative;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1::before,
+  h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  h1::before {
+    background-color: $bg-color;
+    animation: typewriter $typewriterSpeed steps(31) 1s forwards;
+  }
+
+  h1::after {
+
+
+  }
+
+  .first {
+    &::after {
+      width: 0.125em;
+      background: black;
+      animation: typewriter $typewriterSpeed steps(31) 1s forwards,
+      blink 500ms steps(31) infinite,
+      disappear $typewriterSpeed 1s steps(31) forwards;
+
+    }
+  }
+
+  .second {
+
+    &::before {
+      background-color: $bg-color;
+      animation: typewriter $typewriterSpeed steps(31) calc($typewriterSpeed + 1s) forwards;
+    }
+  }
+  .third{
+    &::before {
+      background-color: $bg-color;
+      animation: typewriter $typewriterSpeed steps(31) calc(($typewriterSpeed) * 2 + 1s) forwards;
+    }
+  }
+
+  .forth{
+    &::before {
+      background-color: $bg-color;
+      animation: typewriter $typewriterSpeed steps(31) calc(($typewriterSpeed) * 3 + 1s) forwards;
+    }
+  }
+
+}
+
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+
+@keyframes appear {
+  from {
+    width: 0;
+  }
+  to {
+    width: 0.125em;
+  }
+
+}
+
+@keyframes disappear {
+  99% {
+    width: 0.125em;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes fadeInUp {
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

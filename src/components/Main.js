@@ -8,57 +8,31 @@ import EarthWeather from "./EarthWeather";
 
 function Main(props) {
 
-    const [marsWeather, setMarsWeather] = useState([]);
-    const [location, setLocation] = useState('');
-
-    function handleClick(e) {
-        setLocation(e.target.value)
-    }
-
-    //using dispatch
-    const dispatch = useDispatch()
-
-    function handleSubmit(e) {
-        e.preventDefault()
-        // dispatch(dispatch(addLocation(
-        //     location
-        // )))
-        //
-        // setLocation('')
-
-    }
-
-    // const marsStatus = useSelector(state => state.mars.status)
-    // const posts = useSelector(state => state.mars.posts)
-    //
-    // useEffect(() => {
-    //
-    //     if (marsStatus === 'idle') {
-    //         // if (postStatus === 'idle') {
-    //         dispatch(fetchWeatherMars())
-    //         console.log('effect')
-    //     }
-    //
-    //
-    // }, [marsStatus, dispatch])
-
 
     return (
         <>
             <main className="flow">
-                <section className="search">
+                <section className="intro">
                     <div className="container flow">
-                        <h1 className="fs-primary-heading">Weather App</h1>
-                        <form className="search-bar" onSubmit={handleSubmit}>
-                            <input type="text" value={location} onChange={handleClick}/>
-                            <button type="submit" className="btn">
-                                Search
-                            </button>
-                        </form>
+                        <h1 className={'first '}>
+                            Hi, my name is Ivan and this is
+                        </h1>
+                        <h1 className={'second '}>
+                            my Weather app.
+                        </h1>
+                        <h1 className={'third '}>
+                            Here you can see weather on the
+                        </h1>
+                        <h1 className={'forth '}>
+                            Earth and on the Mars!
+                        </h1>
+
+                        <button className="btn fs-600 earth-btn">Earth</button>
+                        <button className="btn fs-600 mars-btn">Mars</button>
+
                     </div>
                 </section>
-                {/*<MarsWeather/>*/}
-                {/*<EarthWeather/>*/}
+
             </main>
         </>
     );
